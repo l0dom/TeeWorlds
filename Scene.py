@@ -1,7 +1,7 @@
 __author__ = 'Андрей'
 
 import pygame
-import const
+import Const
 
 class Scene:
     def __init__(self, next_scene = None):
@@ -36,8 +36,8 @@ class Scene:
         # event.get() эквивалентен pygame.event.get()
         # передавая параметр в get мы говорим что именно
         # нас интересует из событий.
-        for e in event.get(const.END_SCENE):
-            if e.type == const.END_SCENE:
+        for e in event.get(Const.END_SCENE):
+            if e.type == Const.END_SCENE:
                 self.__end = True
 
     # Эту функцию придется переопределить в потомке
@@ -59,7 +59,24 @@ class Scene:
         return self.__end
 
     def the_end(self):
-        pygame.event.post(pygame.event.Event(const.END_SCENE))
+        pygame.event.post(pygame.event.Event(Const.END_SCENE))
 
     def set_next_scene(self, scene):
         self.__next_scene = scene
+
+class LoadScene(Scene):
+    def _start(self):
+        sprite = self.manager.get_image('load_background.png')
+        coeficient = self.display.get_rect().w / float(sprite.get_rect().w)
+        self.sprite = pygame.transform.scale(sprite, (int(sprite.get_rect().w*coeficient),
+                                                      int(sprite.get_rect().h*coeficient)))
+
+    def _event(self, event):
+        for e in event.get():
+            if e.type == pygame.KEYDOWN:
+                self.the_end()
+                self.set_next_scene(None)
+
+    def _draw(self, dt):
+        self.display.fill((255,255,255))
+        self.display.blit(self.sprite,(0, self.display.get_rect().h-self.sprite.get_rect().h))

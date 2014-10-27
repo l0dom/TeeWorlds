@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import time, pygame
-from ResMenager import *
+import Scene
 from Game import Game
-
-from pygame.locals import *
 
 
 def main():
     # Инициализируем pygame.
-    game = Game()
+    scene = Scene.LoadScene()
+    game = Game(scene=scene)
+    game.set_caption(title="TeeWords",icon="icon.png")
+    game.game_loop()
 
 
 
