@@ -66,10 +66,17 @@ class Scene:
 
 class LoadScene(Scene):
     def _start(self):
-        sprite = self.manager.get_image('load_background.png')
+        sprite = self.manager.get_image('slb01.png')
+        img_back = self.manager.get_image('slb02.png')
+        logo = self.manager.get_image('slb03.png')
+        front = self.manager.get_image('slb04.png')
         coeficient = self.display.get_rect().w / float(sprite.get_rect().w)
         self.sprite = pygame.transform.scale(sprite, (int(sprite.get_rect().w*coeficient),
                                                       int(sprite.get_rect().h*coeficient)))
+        self.img_back = pygame.transform.scale(img_back,(self.display.get_rect().w,self.display.get_rect().h))
+        self.front = pygame.transform.scale(front,(self.display.get_rect().w,self.display.get_rect().h))
+        self.logo = pygame.transform.scale(logo,(int(logo.get_rect().w/4),
+                                                 int(logo.get_rect().h/4)))
 
     def _event(self, event):
         for e in event.get():
@@ -79,4 +86,7 @@ class LoadScene(Scene):
 
     def _draw(self, dt):
         self.display.fill((255,255,255))
+        self.display.blit(self.img_back,(0,0))
         self.display.blit(self.sprite,(0, self.display.get_rect().h-self.sprite.get_rect().h))
+        self.display.blit(self.front,(0,0))
+        self.display.blit(self.logo,(30,30))

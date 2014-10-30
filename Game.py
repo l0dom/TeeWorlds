@@ -1,4 +1,4 @@
-__author__ = 'Андрей' 
+__author__ = 'Андрей'
 
 import pygame
 from ResMenager import ResManager
@@ -8,8 +8,8 @@ class Game:
     # цвет которым будет залит нарисованный экран,
     # максимальный fps
     def __init__(self,
-                 width   = 1000,
-                 height  = 350,
+                 width   = 640,
+                 height  = 360,
                  color   = (255,255,255),
                  fps     = 40,
                  scene   = None,

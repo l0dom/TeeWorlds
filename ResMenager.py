@@ -3,6 +3,8 @@ __author__ = 'Андрей'
 import os, pygame
 from pygame.locals import *
 
+
+
 class ResManager:
     # При инициализации класса мы указываем где у нас что находится.
     def __init__(self,
@@ -42,3 +44,9 @@ class ResManager:
             image = image.convert_alpha()
 
             return image
+
+    def gel_image_dict(self,img_names):
+        dct={}
+        for name in img_names:
+            dct[name]=self.get_image(name)
+        return dct

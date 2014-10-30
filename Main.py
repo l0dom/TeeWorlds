@@ -5,6 +5,10 @@ import Scene
 from Game import Game
 
 
+
+simg={}#stock image
+mimg={}#map image
+
 def main():
     # Инициализируем pygame.
     scene = Scene.LoadScene()
