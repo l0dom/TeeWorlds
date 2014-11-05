@@ -6,12 +6,12 @@ from Game import Game
 
 
 
-simg={}#stock image
-mimg={}#map image
+img={}#stock image
+
 
 def main():
     # Инициализируем pygame.
-    scene = Scene.LoadScene()
+    scene = Scene.LoadScene(3000,Scene.MenuScene())
     game = Game(scene=scene)
     game.set_caption(title="TeeWords",icon="icon.png")
     game.game_loop()

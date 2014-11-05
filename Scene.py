@@ -2,6 +2,7 @@ __author__ = 'Андрей'
 
 import pygame
 import Const
+from Map import Map
 
 class Scene:
     def __init__(self, next_scene = None):
@@ -65,6 +66,11 @@ class Scene:
         self.__next_scene = scene
 
 class LoadScene(Scene):
+    def __init__(self, time = 3000, *argv):
+        Scene.__init__(self, *argv)
+        self.run = 0
+        self.time = time
+
     def _start(self):
         sprite = self.manager.get_image('slb01.png')
         img_back = self.manager.get_image('slb02.png')
@@ -82,7 +88,14 @@ class LoadScene(Scene):
         for e in event.get():
             if e.type == pygame.KEYDOWN:
                 self.the_end()
-                self.set_next_scene(None)
+
+        if self.run>self.time:
+            self.the_end()
+
+
+    def _update(self, dt):
+        self.run+=dt;
+        #self.front = self.front.fill((0,0,0,255-255*(self.run/self.time)), None, pygame.BLEND_RGBA_SUB)
 
     def _draw(self, dt):
         self.display.fill((255,255,255))
@@ -90,3 +103,102 @@ class LoadScene(Scene):
         self.display.blit(self.sprite,(0, self.display.get_rect().h-self.sprite.get_rect().h))
         self.display.blit(self.front,(0,0))
         self.display.blit(self.logo,(30,30))
+
+class GameScene(Scene):
+    def _start(self):
+        self.map = Map("firstMap.map")
+        self.map.start(self.display)
+    def _draw(self, dt):
+        self.display.fill((255,255,255))
+        self.map.draw()
+
+class Menu:
+    def __init__(self, position = (0,0), loop = True):
+        self.index = 0
+        self.x = position[0]
+        self.y = position[1]
+        self.menu = list()
+
+    # Метод перемещающий нас в низ циклично по всем элементам.
+    def down(self):
+        self.index += 1
+        if self.index >= len(self.menu):
+            self.index = 0
+
+    # Тоже самое но в вверх.
+    def up(self):
+        self.index -= 1
+        if self.index < 0:
+            self.index = len(self.menu)-1
+
+    # Добавляет новый элемент, нужно передать 2 изображения.
+    # На 1 не выбранный вид элемента.
+    # На 2 выбранный элемент
+    def add_menu_item(self, no_select, select, func):
+        self.menu.append({ 'no select' : no_select,
+                           'select' : select,
+                           'func' : func })
+
+    def call(self):
+        self.menu[self.index]['func']()
+
+    def draw(self, display):
+        index = 0
+        x = self.x
+        y = self.y
+        for item in self.menu:
+            if self.index == index:
+                display.blit(item['select'], (x, y))
+                y += item['select'].get_rect().h
+            else:
+                display.blit(item['no select'], (x, y))
+                y += item['no select'].get_rect().h
+            index += 1
+
+class MenuScene(Scene):
+    def item_call(self):
+        print("item_call")
+        self.the_end()
+
+    def newGame(self):
+        self.set_next_scene(GameScene())
+        self.the_end()
+
+    def exit(self):
+        self.set_next_scene(LoadScene(1500,None))
+        self.the_end()
+
+    def _start(self):
+        self.menu = Menu((self.display.get_rect().w/2-100,
+                          self.display.get_rect().h/2-100))
+
+        # Именно таким образом мы можем получить текст в pygame
+        # В данном случае мы используем системный шрифт.
+        font      = pygame.font.SysFont("Monospace", 40, bold=False, italic=False)
+        font_bold = pygame.font.SysFont("Monospace", 40, bold=True, italic=False)
+        item = "Новая игра"
+        self.menu.add_menu_item(font.render(item,True,(0,0,0)),
+                                font_bold.render(item,True,(0,0,0)),
+                                self.newGame)
+        item = "Настройки"
+        self.menu.add_menu_item(font.render(item,True,(0,0,0)),
+                                font_bold.render(item,True,(0,0,0)),
+                                self.item_call)
+        item = "Выход"
+        self.menu.add_menu_item(font.render(item,True,(0,0,0)),
+                                font_bold.render(item,True,(0,0,0)),
+                                self.exit)
+
+    def _event(self, event):
+        for e in event.get():
+            if e.type == pygame.KEYDOWN:
+                if e.key == pygame.K_DOWN:
+                    self.menu.down()
+                elif e.key == pygame.K_UP:
+                    self.menu.up()
+                elif e.key == pygame.K_RETURN:
+                    self.menu.call()
+
+    def _draw(self, dt):
+        self.display.fill((255,255,255))
+        self.menu.draw(self.display)

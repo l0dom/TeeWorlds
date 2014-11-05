@@ -1,6 +1,6 @@
 __author__ = 'Андрей'
 
-import os, pygame
+import os, pygame, pickle
 from pygame.locals import *
 
 
@@ -45,8 +45,20 @@ class ResManager:
 
             return image
 
-    def gel_image_dict(self,img_names):
+    def get_image_dict(self,img_names):
         dct={}
         for name in img_names:
             dct[name]=self.get_image(name)
         return dct
+
+    def getBlocks (self, dict):
+        resDict = {};
+        for key,value in dict.items():
+            resDict[key]=self.get_image(value)
+        return resDict
+
+
+    def getMapRes(self, name):
+        with open (name, "rb") as data:
+            mapCord,nameImgDict,respLst = pickle.load(data)
+        return (mapCord,self.getBlocks(nameImgDict),respLst);

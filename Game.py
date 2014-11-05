@@ -8,8 +8,8 @@ class Game:
     # цвет которым будет залит нарисованный экран,
     # максимальный fps
     def __init__(self,
-                 width   = 640,
-                 height  = 360,
+                 width   = 800,
+                 height  = 640,
                  color   = (255,255,255),
                  fps     = 40,
                  scene   = None,
