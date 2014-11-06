@@ -2,14 +2,16 @@ __author__ = 'Андрей'
 
 import pygame
 from ResMenager import ResManager
+from Const import *
+
 
 class Game:
     # ширина и высота окна,
     # цвет которым будет залит нарисованный экран,
     # максимальный fps
     def __init__(self,
-                 width   = 800,
-                 height  = 640,
+                 width   = WINDOW_WIDTH,
+                 height  = WINDOW_HEIGHT,
                  color   = (255,255,255),
                  fps     = 40,
                  scene   = None,

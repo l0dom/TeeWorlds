@@ -3,9 +3,8 @@ __author__ = 'Андрей'
 from ResMenager import ResManager
 import pygame
 from pygame import*
+from Const import *
 
-PLATFORM_WIDTH = 32
-PLATFORM_HEIGHT = 32
 
 class Map:
     def __init__ (self,mapName):
@@ -29,7 +28,7 @@ class Map:
                     self.display.blit(pf,(x,y))
 
                 x+=PLATFORM_WIDTH
-            x+=PLATFORM_HEIGHT
+            y+=PLATFORM_HEIGHT
             x=0
 
 

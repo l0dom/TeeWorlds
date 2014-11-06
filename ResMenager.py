@@ -62,3 +62,7 @@ class ResManager:
         with open (name, "rb") as data:
             mapCord,nameImgDict,respLst = pickle.load(data)
         return (mapCord,self.getBlocks(nameImgDict),respLst);
+
+    def dumpMapRes(self, map, nameOfMap):
+        with open (nameOfMap, "wb") as data:
+            pickle.dump(map,data)

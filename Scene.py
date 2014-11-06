@@ -4,6 +4,14 @@ import pygame
 import Const
 from Map import Map
 
+def mouseIn(mouse,start,end):
+    if (mouse[0]>start[0])and(mouse[1]>start[1]):
+        if (mouse[0]<end[0])and(mouse[1]<end[1]):
+            return True
+    return False
+
+
+#Класс сцена
 class Scene:
     def __init__(self, next_scene = None):
         self.__next_scene = next_scene
@@ -65,6 +73,7 @@ class Scene:
     def set_next_scene(self, scene):
         self.__next_scene = scene
 
+#Класс сцена загрузки
 class LoadScene(Scene):
     def __init__(self, time = 3000, *argv):
         Scene.__init__(self, *argv)
@@ -88,6 +97,9 @@ class LoadScene(Scene):
         for e in event.get():
             if e.type == pygame.KEYDOWN:
                 self.the_end()
+        if pygame.mouse.get_pressed()[0]:
+            self.the_end()
+
 
         if self.run>self.time:
             self.the_end()
@@ -104,20 +116,14 @@ class LoadScene(Scene):
         self.display.blit(self.front,(0,0))
         self.display.blit(self.logo,(30,30))
 
-class GameScene(Scene):
-    def _start(self):
-        self.map = Map("firstMap.map")
-        self.map.start(self.display)
-    def _draw(self, dt):
-        self.display.fill((255,255,255))
-        self.map.draw()
-
+#Класс эллементов меню
 class Menu:
     def __init__(self, position = (0,0), loop = True):
         self.index = 0
         self.x = position[0]
         self.y = position[1]
         self.menu = list()
+        self.click =False
 
     # Метод перемещающий нас в низ циклично по всем элементам.
     def down(self):
@@ -130,6 +136,26 @@ class Menu:
         self.index -= 1
         if self.index < 0:
             self.index = len(self.menu)-1
+
+    def mouseEvent(self,mouseUp=False):
+        mouse = pygame.mouse.get_pos()
+
+        index = 0
+        x = self.x
+        y = self.y
+        for item in self.menu:
+            if self.index == index:
+                if mouseIn(mouse, (x, y), (x+item['select'].get_rect().w,x+item['select'].get_rect().h)):
+                    self.index = index
+                    if mouseUp : self.call()
+                y += item['select'].get_rect().h
+            else:
+                if mouseIn(mouse, (x, y), (x+item['select'].get_rect().w,y+item['select'].get_rect().h)):
+                    self.index = index
+                    if mouseUp : self.call()
+                y += item['no select'].get_rect().h
+            index += 1
+
 
     # Добавляет новый элемент, нужно передать 2 изображения.
     # На 1 не выбранный вид элемента.
@@ -155,12 +181,17 @@ class Menu:
                 y += item['no select'].get_rect().h
             index += 1
 
+#Класс меню
 class MenuScene(Scene):
     def item_call(self):
         print("item_call")
         self.the_end()
 
     def newGame(self):
+        self.set_next_scene(GameScene())
+        self.the_end()
+
+    def mapEdit(self):
         self.set_next_scene(GameScene())
         self.the_end()
 
@@ -175,11 +206,15 @@ class MenuScene(Scene):
         # Именно таким образом мы можем получить текст в pygame
         # В данном случае мы используем системный шрифт.
         font      = pygame.font.SysFont("Monospace", 40, bold=False, italic=False)
-        font_bold = pygame.font.SysFont("Monospace", 40, bold=True, italic=False)
+        font_bold = pygame.font.SysFont("Monospace", 50, bold=True, italic=False)
         item = "Новая игра"
         self.menu.add_menu_item(font.render(item,True,(0,0,0)),
                                 font_bold.render(item,True,(0,0,0)),
                                 self.newGame)
+        item = "Редактор карт"
+        self.menu.add_menu_item(font.render(item,True,(0,0,0)),
+                                font_bold.render(item,True,(0,0,0)),
+                                self.mapEdit)
         item = "Настройки"
         self.menu.add_menu_item(font.render(item,True,(0,0,0)),
                                 font_bold.render(item,True,(0,0,0)),
@@ -190,6 +225,7 @@ class MenuScene(Scene):
                                 self.exit)
 
     def _event(self, event):
+        self.menu.mouseEvent()
         for e in event.get():
             if e.type == pygame.KEYDOWN:
                 if e.key == pygame.K_DOWN:
@@ -198,7 +234,21 @@ class MenuScene(Scene):
                     self.menu.up()
                 elif e.key == pygame.K_RETURN:
                     self.menu.call()
+            if e.type == pygame.MOUSEBUTTONUP:
+                self.menu.mouseEvent(True)
 
     def _draw(self, dt):
         self.display.fill((255,255,255))
         self.menu.draw(self.display)
+
+
+#Класс игровая сцена
+class GameScene(Scene):
+    def _start(self):
+        self.map = Map("firstMap.map")
+        self.map.start(self.display)
+    def _draw(self, dt):
+        self.display.fill((255,255,255))
+        self.map.draw()
+
+#Класс редактора карт
