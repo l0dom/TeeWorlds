@@ -250,5 +250,9 @@ class GameScene(Scene):
     def _draw(self, dt):
         self.display.fill((255,255,255))
         self.map.draw()
+    def _event(self, event):
+        self.map.event(event)
+    def _update(self, dt):
+        self.map.update(dt)
 
 #Класс редактора карт

@@ -7,14 +7,15 @@
     <file path="/Main.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415273742941" ignored="false" />
     <file path="/ResMenager.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415279857017" ignored="false" />
     <file path="/Game.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415286243204" ignored="false" />
-    <file path="/Scene.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415285713402" ignored="false" />
+    <file path="/Scene.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415299120189" ignored="false" />
     <file path="/Const.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415287068822" ignored="false" />
     <file path="/a.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1414414462518" ignored="false" />
-    <file path="/Person.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415287196374" ignored="false" />
-    <file path="/Map.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415286125903" ignored="false" />
+    <file path="/Person.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415306245926" ignored="false" />
+    <file path="/Map.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415306938784" ignored="false" />
     <file path="$PROJECT_DIR$/../TeeWordsMapCreate/Main.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415279789644" ignored="false" />
     <file path="$PROJECT_DIR$/../TeeWordsMapCreate/Window.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415279702143" ignored="false" />
     <file path="$PROJECT_DIR$/../TeeWordsMapCreate/ResMenager.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415279861666" ignored="false" />
+    <file path="/Block.py" changelist="2d8861e1-eace-4d72-9a33-0a9a05ec0560" time="1415304868009" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,22 +47,37 @@
       <file leaf-file-name="Scene.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="253" column="21" selection-start="8062" selection-end="8062" vertical-scroll-proportion="-87.72">
+            <state line="14" column="12" selection-start="269" selection-end="269" vertical-scroll-proportion="28.0">
               <folding>
                 <element signature="e#23#36#0" expanded="true" />
                 <element signature="e#274#1796#0" expanded="false" />
+                <element signature="e#1846#3544#0" expanded="false" />
+                <element signature="e#2866#3088#0" expanded="false" />
                 <element signature="e#3583#5603#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Map.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Map.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="22" selection-start="555" selection-end="634" vertical-scroll-proportion="0.0">
+            <state line="30" column="70" selection-start="862" selection-end="862" vertical-scroll-proportion="0.44635195">
               <folding>
                 <element signature="e#23#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Block.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Block.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#23#42#0" expanded="true" />
+                <marker date="1415305068550" expanded="true" signature="123:398" placeholder="..." />
+                <marker date="1415305068550" expanded="true" signature="158:398" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -76,10 +92,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Person.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Person.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="47" selection-start="750" selection-end="750" vertical-scroll-proportion="0.35172415">
+            <state line="42" column="28" selection-start="1508" selection-end="1508" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#23#71#0" expanded="true" />
               </folding>
@@ -90,8 +106,10 @@
       <file leaf-file-name="Game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="71" selection-end="90" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="29" column="18" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#23#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +117,7 @@
       <file leaf-file-name="Const.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Const.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+            <state line="7" column="2" selection-start="127" selection-end="141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,19 +139,20 @@
         <option value="$PROJECT_DIR$/data/Map.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/ResMenager.py" />
-        <option value="$PROJECT_DIR$/Scene.py" />
         <option value="$PROJECT_DIR$/Game.py" />
-        <option value="$PROJECT_DIR$/Map.py" />
+        <option value="$PROJECT_DIR$/Scene.py" />
         <option value="$PROJECT_DIR$/Const.py" />
+        <option value="$PROJECT_DIR$/data/Block.py" />
+        <option value="$PROJECT_DIR$/Block.py" />
         <option value="$PROJECT_DIR$/Person.py" />
+        <option value="$PROJECT_DIR$/Map.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -339,18 +358,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494432" sideWeight="0.6715909" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13874066" sideWeight="0.44308037" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2895323" sideWeight="0.5977273" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284091" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55691963" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40227273" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -424,11 +443,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Const.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -446,7 +460,9 @@
     <entry file="file://$PROJECT_DIR$/Game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="30" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#23#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -456,6 +472,8 @@
           <folding>
             <element signature="e#23#36#0" expanded="true" />
             <element signature="e#274#1796#0" expanded="false" />
+            <element signature="e#1846#3544#0" expanded="false" />
+            <element signature="e#2866#3088#0" expanded="false" />
             <element signature="e#3583#5603#0" expanded="false" />
           </folding>
         </state>
@@ -494,40 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="21" selection-start="8062" selection-end="8062" vertical-scroll-proportion="-87.72">
-          <folding>
-            <element signature="e#23#36#0" expanded="true" />
-            <element signature="e#274#1796#0" expanded="false" />
-            <element signature="e#3583#5603#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="71" selection-end="90" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="22" selection-start="555" selection-end="634" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#23#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Const.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ResMenager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="4" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0">
@@ -535,11 +519,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="18" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Const.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="2" selection-start="127" selection-end="141" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#23#42#0" expanded="true" />
+            <marker date="1415305068550" expanded="true" signature="123:398" placeholder="..." />
+            <marker date="1415305068550" expanded="true" signature="158:398" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="12" selection-start="269" selection-end="269" vertical-scroll-proportion="28.0">
+          <folding>
+            <element signature="e#23#36#0" expanded="true" />
+            <element signature="e#274#1796#0" expanded="false" />
+            <element signature="e#1846#3544#0" expanded="false" />
+            <element signature="e#2866#3088#0" expanded="false" />
+            <element signature="e#3583#5603#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Person.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="47" selection-start="750" selection-end="750" vertical-scroll-proportion="0.35172415">
+        <state line="42" column="28" selection-start="1508" selection-end="1508" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#23#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="70" selection-start="862" selection-end="862" vertical-scroll-proportion="0.44635195">
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
